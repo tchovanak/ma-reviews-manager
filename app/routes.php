@@ -20,6 +20,9 @@ Route::get('/', function()
 /*adding new testing*/
 Route::post('testings/add', function()
 {
+	$testing = new DeviceTesting;
+	$testing->transportations_num = 4;
+	$testing->save();
 	return View::make('hello');
 });
 
