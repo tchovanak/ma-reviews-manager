@@ -17,3 +17,10 @@ Route::get('/', function()
 	return View::make('reviews');
 });
 
+/*adding new testing*/
+Route::post('testings/add', function()
+{
+	return View::make('hello');
+});
+
+
