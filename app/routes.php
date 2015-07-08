@@ -11,19 +11,22 @@
 |
 */
 
+require_once "Collection.php";
+
 /*Home page*/
-Route::get('/', function()
-{
-	return View::make('reviews');
+Route::get('/', function(){
+	return Redirect::to('reviews');
 });
 
+/*Home page*/
+Route::get('reviews', 'TestingsController@displayReviews');
+
 /*adding new testing*/
-Route::post('testings/add', function()
-{
-	$testing = new DeviceTesting;
-	$testing->transportations_num = 4;
-	$testing->save();
-	return View::make('hello');
-});
+Route::post('testings/add', 'TestingsController@add');
+
+/*Enums page*/
+Route::get('/enums', 'EnumsController@displayEnums');
+
+
 
 
