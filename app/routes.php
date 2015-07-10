@@ -25,7 +25,9 @@ Route::get('reviews', 'TestingsController@displayReviews');
 Route::post('testings/add', 'TestingsController@add');
 
 /*Enums page*/
-Route::get('/enums', 'EnumsController@displayEnums');
+Route::get('/enums', 'EnumsController@getIndex');
+Route::post('/enums/portals/create', 'EnumsController@addPortal');
+Route::post('/enums/portals/{id}', 'EnumsController@editPortal');
 
 
 
